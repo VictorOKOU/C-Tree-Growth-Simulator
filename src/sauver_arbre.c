@@ -1,3 +1,4 @@
+
 //
 // Created by flasque on 14/10/2026.
 //
@@ -10,12 +11,10 @@
 // étape 4 : sauvegarde de l'arbre a dans le fichier texte nom_fichier
 // la sauvegarde doit être effectuée par un PARCOURS EN LARGEUR de l'arbre (file de rameaux, voir queue.h) :
 // c'est l'ordre que readTree attend pour relire le fichier
-void saveTree(t_arbre a, char *nom_fichier)
-{
+void saveTree(t_arbre a, char *nom_fichier) {
     // ouverture du fichier en écriture, en mode texte (fourni, à ne pas modifier)
     FILE *f = fopen(nom_fichier, "wt");
-    if (f == NULL)
-    {
+    if (f == NULL) {
         perror("Impossible de creer le fichier");
         return;
     }
@@ -28,6 +27,26 @@ void saveTree(t_arbre a, char *nom_fichier)
     // un rameau ne connaît pas son père : écrivez la ligne de chaque fils au moment où vous traitez son père
     // saveTree ne modifie pas l'arbre et ne le libère pas : il sert encore après la sauvegarde
     // à la fin du parcours, la file est vide et dequeue a déjà libéré ses cellules : rien d'autre à libérer
+
+    fprintf(f, "%.2f %.2f\n", a.pied->x, a.pied->y);
+    t_queue q = createEmptyQueue();
+    enqueue(&q, a.pied);
+
+    while (!isEmptyQueue(q)) {
+        t_rameau *parent = dequeue(&q);
+        for (int i = 0; i < parent->nb_fils; i++) {
+            t_rameau *fils = parent->p_fils[i];
+            fprintf(f, "%d %d %d %.2f %.2f %d %d\n",
+                fils->num,
+                fils->saison,
+                parent->num,
+                fils->dir,
+                fils->longueur,
+                fils->gen,
+                fils->etat);
+            enqueue(&q, fils);
+        }
+    }
 
     // fermeture du fichier (fourni, à ne pas modifier)
     fclose(f);
