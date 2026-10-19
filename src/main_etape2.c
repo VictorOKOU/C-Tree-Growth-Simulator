@@ -66,6 +66,5 @@ int main(void)
     printf("growTree, graine 3, 8 saisons : %d rameaux (arbre_moyen.txt : 38 rameaux)\n", c.nb_rameaux);
     drawSvg(c.pied, "output/etape2_moyen.svg");
     animateSvg(c.pied, "output/etape2_moyen_animation.svg", 0.6);
-
     return 0;
 }
