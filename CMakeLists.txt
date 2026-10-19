@@ -21,6 +21,7 @@ add_executable(foret
         utils/src/dessin.c utils/include/dessin.h
         utils/src/alea.c utils/include/alea.h)
 
+
 # étape 1 : prise en main de l'environnement (lire, afficher, dessiner, animer un arbre)
 add_executable(etape_1
         src/main_etape1.c
@@ -37,7 +38,9 @@ add_executable(etape_2
         src/croissance.c include/croissance.h
         utils/src/arbres_utils.c utils/include/arbres_utils.h
         utils/src/dessin.c utils/include/dessin.h
-        utils/src/alea.c utils/include/alea.h)
+        utils/src/alea.c utils/include/alea.h
+        src/croissance_step.c
+        include/croissance_step.h)
 
 
 # étape 4 : sauvez les arbres ! (sauvegarde d'un arbre dans un fichier, par un parcours en largeur)

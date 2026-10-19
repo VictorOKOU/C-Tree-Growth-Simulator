@@ -11,6 +11,7 @@
 #include "alea.h"
 #include "queue.h"
 #include "croissance.h"
+#include "croissance_step.h"
 
 int main(void)
 {
@@ -66,5 +67,28 @@ int main(void)
     printf("growTree, graine 3, 8 saisons : %d rameaux (arbre_moyen.txt : 38 rameaux)\n", c.nb_rameaux);
     drawSvg(c.pied, "output/etape2_moyen.svg");
     animateSvg(c.pied, "output/etape2_moyen_animation.svg", 0.6);
+
+
+    // 6. Verification de l'etape 3
+    printf("\n--- Verification etape 3 ---\n");
+    t_arbre d = createTree(0, 1, 3);
+    growTree(&d, 8);
+    t_arbre_step e = createTreeStep(0, 1, 3);
+
+    for (int i = 0; i < 8; i++) {
+        growTreeStep(&e);
+    }
+
+    printf("\nArbre avec growTree :\n");
+    displayTree(d);
+    printf("\nArbre avec growTreeStep :\n");
+    displayTree(e.arbre);
+    printf("\nNombre de rameaux :\n");
+    printf("growTree : %d\n", d.nb_rameaux);
+    printf("growTreeStep : %d\n", e.arbre.nb_rameaux);
+    printf("Nombre de saisons : %d\n", e.saison);
+
+    clearBuds(&e);
+
     return 0;
 }
