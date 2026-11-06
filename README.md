@@ -1,0 +1,235 @@
+
+#  Tree Growth Simulator — C
+
+### Data Structures & Algorithms Project | Efrei Paris
+
+A tree growth simulator developed in **C**, designed to model the evolution of a tree through multiple seasons using probabilistic branching and dynamic data structures.
+
+This academic project explores fundamental computer science concepts such as **pointers, recursion, linked structures, queues, memory management, and graph traversal algorithms**.
+
+Developed as part of the **TI301 — Data Structures & Algorithms** course at Efrei Paris.
+
+---
+
+##  Project Overview
+
+The objective of this project is to simulate the growth of a tree over several seasons.
+
+Starting from an initial structure, the program progressively generates new branches and buds according to predefined growth rules and probabilities.
+
+The simulation models the evolution of the tree while demonstrating how dynamic data structures can represent complex hierarchical systems.
+
+The project also implements algorithms to traverse and save the resulting tree structure.
+
+---
+
+##  Features
+
+###  1. Tree Growth Simulation
+- Generate a tree using dynamic data structures.
+- Simulate the development of new branches and buds.
+- Apply probabilistic rules to determine branch growth.
+- Manage tree evolution over multiple seasons.
+
+###  2. Step-by-Step Growth
+- Simulate tree growth one season at a time.
+- Track the evolution of buds and branches.
+- Use a queue to manage active buds.
+- Compare incremental growth with complete simulations.
+
+###  3. Tree Data Structures
+- Represent branches using linked nodes.
+- Manage parent-child relationships.
+- Dynamically allocate memory for new branches.
+- Navigate hierarchical tree structures.
+
+###  4. Breadth-First Search (BFS)
+- Traverse the tree using a queue.
+- Explore nodes level by level.
+- Process branches in breadth-first order.
+- Apply BFS to serialize tree structures.
+
+###  5. Tree Serialization
+- Save a generated tree to a text file.
+- Preserve the information required to reconstruct the tree.
+- Use breadth-first traversal to maintain the expected node order.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| C | Main programming language |
+| CLion | Development environment |
+| CMake | Project configuration and build |
+| Git | Version control |
+| GitHub | Collaboration and source code hosting |
+
+### Programming Concepts
+
+- Pointers and dynamic memory allocation
+- Structures (`struct`)
+- Linked data structures
+- Trees and hierarchical relationships
+- Queues (FIFO)
+- Breadth-First Search (BFS)
+- Recursion
+- Randomized algorithms
+- File handling and serialization
+- Modular programming
+
+---
+
+##  Main Algorithms
+
+### Tree Growth — `growTree()`
+
+Simulates the evolution of a tree over multiple seasons.
+
+The function manages the creation of branches and the overall development of the tree based on growth rules.
+
+### Bud Development — `growBud()`
+
+Handles the evolution of an individual bud and determines its development according to the simulation parameters.
+
+### Seasonal Growth — `growTreeStep()`
+
+Performs one growth iteration, corresponding to a single season.
+
+This approach allows the simulation to advance progressively while managing buds through a queue.
+
+### Tree Saving — `saveTree()`
+
+Saves the generated tree into a text file.
+
+The function uses a **Breadth-First Search (BFS)** algorithm, ensuring that branches are processed level by level.
+
+---
+
+##  Breadth-First Search (BFS)
+
+One of the key algorithms implemented in this project is Breadth-First Search.
+
+Unlike Depth-First Search (DFS), BFS explores all nodes at the current depth before moving to the next level.
+
+The algorithm relies on a **FIFO queue**.
+
+### Algorithm
+
+1. Insert the root node into the queue.
+2. Remove the first node from the queue.
+3. Process the current node.
+4. Insert its children into the queue.
+5. Repeat until the queue is empty.
+
+**Time complexity:** O(n), where n is the number of nodes.
+
+This algorithm is used to save the tree in the correct order.
+
+---
+
+##  Project Structure
+
+The project is organized into C source files and header files.
+
+The main components cover:
+
+- Tree structures and branch management
+- Growth algorithms
+- Queue implementation
+- Tree traversal
+- File saving
+- Simulation execution
+
+The project uses CMake to manage compilation.
+
+---
+
+##  Installation & Execution
+
+### Prerequisites
+
+- A C compiler (GCC or Clang)
+- CMake
+- CLion (recommended)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/fabio-devine/TI301_projet_INT1_devine_okou.git
+```
+
+### Open in CLion
+
+1. Launch CLion.
+2. Select **Open**.
+3. Select the cloned project folder.
+4. Load the CMake configuration.
+5. Build the project.
+6. Select the appropriate executable target and run it.
+
+Alternatively, if CMake is configured at the repository root:
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+Run the appropriate executable generated by CMake.
+
+---
+
+##  Learning Outcomes
+
+This project strengthened our understanding of fundamental data structures and algorithms in C.
+
+### Technical Skills
+
+- Implementing dynamic tree structures.
+- Manipulating pointers and dynamically allocated memory.
+- Designing queue-based algorithms.
+- Understanding recursive and iterative approaches.
+- Implementing BFS traversal.
+- Managing structured data through file operations.
+- Organizing a C project into reusable modules.
+- Building and debugging applications with CLion and CMake.
+
+### Teamwork Skills
+
+- Collaborating on a shared codebase.
+- Using Git and GitHub for version control.
+- Integrating different components.
+- Testing and debugging algorithms.
+- Organizing development tasks.
+
+---
+
+##  Authors
+
+**Victor OKOU**
+- Student at Efrei Paris
+- [GitHub Profile](https://github.com/VictorOKOU)
+
+**Fabio Devine**
+- Student at Efrei Paris
+- [GitHub Profile](https://github.com/fabio-devine)
+
+Developed as part of a collaborative academic project.
+
+---
+
+##  Academic Context
+
+**Institution:** Efrei Paris  
+**Course:** TI301 — Data Structures & Algorithms  
+**Language:** C  
+**Project Type:** Academic group project
+
+---
+
+##  License
+
+This project was developed for educational purposes.
+
+No open-source license has been specified. All rights remain with their respective owners.
